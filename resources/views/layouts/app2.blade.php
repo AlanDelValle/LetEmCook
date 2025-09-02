@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title') - Let'em cook!</title>
+
+    {{-- Fonts --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Domine:wght@400..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link href={{asset("css/app.css") }} rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+</head>
+<body class="background">
+    <header>
+        @include('layouts.header')
+    </header>
+    <main class="container-center flex flex-col items-center md:flex-col min-h-screen">        
+        @yield('content')
+    </main>    
+    <footer>
+        @include('layouts.footer')
+    </footer>
+</body>
+</html>
+<script src="//unpkg.com/alpinejs" defer></script> 

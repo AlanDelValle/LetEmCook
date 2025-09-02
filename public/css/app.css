@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+/* <weight>: Use a value from 400 to 700
+<uniquifier>: Use a unique and descriptive class name */
+.domine-bold {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bellefair-regular {
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* <weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name */
+.league-spartan {
+  font-family: "League Spartan", sans-serif;  
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.card{
+  width: 200px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    125% 125% at -2% 101%,
+    rgba(245, 87, 2, 1) 10.5%,
+    rgba(245, 120, 2, 1) 16%,
+    rgba(245, 140, 2, 1) 17.5%,
+    rgba(245, 170, 100, 1) 25%,
+    rgba(238, 174, 202, 1) 40%,
+    rgba(202, 179, 214, 1) 65%,
+    rgba(148, 201, 233, 1) 100%
+  );
+}
+
+/* From Uiverse.io by WhiteNervosa */ 
+.btnheader {  
+  color: #000000;  
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.btnheader:focus,
+.btnheader:hover {
+  color: #000000;
+}
+
+.btnheader:focus:after,
+.btnheader:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.btnheader:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #000000;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}

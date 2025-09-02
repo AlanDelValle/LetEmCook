@@ -2,10 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContentController;
 
-Route::get('/', function () {
+Route::get('/', [ContentController::class, 'index'])->name('content.index');
+
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
