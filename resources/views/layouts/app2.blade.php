@@ -17,7 +17,7 @@
     <header>
         @include('layouts.header')
     </header>
-    <main class="container-center flex flex-col items-center md:flex-col min-h-screen">        
+    <main class="container-center flex flex-col items-center md:flex-col">        
         @yield('content')
     </main>    
     <footer>

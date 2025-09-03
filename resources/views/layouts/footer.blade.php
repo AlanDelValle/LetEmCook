@@ -1,4 +1,4 @@
-<footer class="footer league-spartan w-scren text-black py-6 pt-10">
+<footer class="footer league-spartan w-scren text-black py-6 mt-10">
     <div class="contaier mx-auto px-4">
         <div class="text-center mb-6">
             <p class="mb-4">Let'em Cook! é o destino premium para entretenimento gastronômico, oferecendo uma vasta coleção de conteúdo exclusivo em qualidade superior.</p>

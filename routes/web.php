@@ -3,8 +3,18 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\CookController;
+use App\Models\Cook;
 
+//home
 Route::get('/', [ContentController::class, 'index'])->name('content.index');
+Route::get('/content/{content}', [ContentController::class, 'show'])->name('content.show');
+
+// Cooks
+Route::get('/cooks', [CookController::class, 'index'])->name('cooks.index');
+Route::get('/cooks/{id}', [CookController::class, 'show'])->name('cooks.show');
+
+
 
 
 /*Route::get('/', function () {

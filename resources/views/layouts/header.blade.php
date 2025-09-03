@@ -6,7 +6,7 @@
 
         <ul class="hidden xl:flex ml-5 space-x-6 mx-auto text-black league-spartan text-lg font-light">
              <li><a href="{{ route('content.index') }}" class="px-1 btnheader">Início</a></li>
-             <li><a href="#" class="px-1 btnheader">Vídeos</a></li>
+             <li><a href="#" class="px-1 btnheader">Receitas</a></li>
             <li><a href="#" class="px-1 btnheader">Categorias</a></li>
             <li><a href="#" class="px-1 btnheader">Chefs</a></li>
         </ul>        
