@@ -16,8 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('video_duration_seconds')->nullable();
             $table->string('video_thumbnail_url', 400);
             $table->string('video_embed_url', 400);        
-            $table->json('video_thumbnail_previews_url')->nullable();                       
-            $table->json('cooks')->nullable();
+            $table->json('video_thumbnail_previews_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
