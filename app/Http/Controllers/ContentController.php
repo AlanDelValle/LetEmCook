@@ -23,11 +23,11 @@ class ContentController extends Controller
         ->get();
 
     $categories = Category::inRandomOrder()
-        ->take(10)
+        ->take(8)
         ->get();
     
     $cooks = Cook::inRandomOrder()
-        ->take(10)
+        ->take(8)
         ->get();
 
     return view('index', compact('latestContents', 'mostViewedContents', 'categories', 'cooks'));

@@ -1,5 +1,5 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    @forelse ($latestContents as $content)
+    @forelse ($mostViewedContents as $content)
         <div class="w-70 rounded-md overflow-hidden shadow-md">                
             <div class="relative">
                 <a href="{{ route('content.show', $content->id) }}" class="block relative group">
@@ -14,14 +14,14 @@
             </div>
             <div class="p-2 card h-30 league-spartan">
                 <h3 class="text-lg font-semibold text-black truncate">{{ $content->title ?? 'Untitled' }}</h3>                
-                    @if (optional($content->cooks)->isNotEmpty())
-                        @foreach ($content->cooks as $cooks)
-                            <a href="{{ route('cooks.show', $cooks->id) }}" class="text-sm btnheader truncate text-wrap">{{ $cooks->name }}</a>
-                                @if (!$loop->last), @endif
+                    @if (optional($content->cooks)->isNotEmpty())                        
+                        @foreach ($content->cooks as $cooks)                        
+                            <a href="{{ route('cooks.show', $cooks->id) }}" class="text-sm btnheader truncate text-wrap">{{ $cooks->name }} </a>
+                                @if (!$loop->last), @endif 
                         @endforeach
                                 @else
                                     None
-                                @endif                               
+                                @endif                                                            
                 <p class="text-sm text-black">
                     {{ Number::abbreviate($content->view_count) }} 
                     {{ $content->view_count === 1 ? 'visualização' : 'visualizações' }}

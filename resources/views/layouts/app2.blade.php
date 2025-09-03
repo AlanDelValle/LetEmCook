@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - Let'em cook!</title>
-
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}">
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Domine:wght@400..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-    <link href={{asset("css/app.css") }} rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href={{asset("css/app.css") }} rel="stylesheet">    
     
 </head>
 <body class="background">
@@ -24,5 +23,6 @@
         @include('layouts.footer')
     </footer>
 </body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="//unpkg.com/alpinejs" defer></script> 
+</html>
