@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\CookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SearchController;
 use App\Models\Cook;
 
 //home
@@ -19,7 +20,8 @@ Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categ
 Route::get('/cooks', [CookController::class, 'index'])->name('cooks.index');
 Route::get('/cooks/{id}', [CookController::class, 'show'])->name('cooks.show');
 
-
+// Search
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 
 /*Route::get('/', function () {

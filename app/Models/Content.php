@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 
 class Content extends Model
 {
-    use SoftDeletes, HasFactory;
+    use SoftDeletes, HasFactory, Searchable;
+
     protected $fillable = [
         'title',
         'description',
@@ -36,5 +38,28 @@ class Content extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'content_tag');
+    }
+
+    /**
+     * Define os campos que serão indexados pelo Scout.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        return [
+            'title' => $this->title,
+            'description' => $this->description,
+        ];
+    }
+
+    /**
+     * Define o nome do índice para o Scout.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'contents_index';
     }
 }

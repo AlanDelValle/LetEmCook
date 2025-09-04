@@ -7,12 +7,12 @@
         <ul class="hidden xl:flex ml-5 space-x-6 mx-auto text-black league-spartan text-lg font-light">
              <li><a href="{{ route('content.index') }}" class="px-1 btnheader">Início</a></li>
              <li><a href="#" class="px-1 btnheader">Receitas</a></li>
-            <li><a href="#" class="px-1 btnheader">Categorias</a></li>
+            <li><a href="{{ route('categories.index') }}" class="px-1 btnheader">Categorias</a></li>
             <li><a href="#" class="px-1 btnheader">Chefs</a></li>
         </ul>        
 
         <div class="flex items-center space-x-5 mx-2">
-            <form action="#" method="GET" class="form relative">
+            <form action="{{ route('search') }}" method="GET" class="form relative">
                 <button class="absolute left-2 -translate-y-1/2 top-1/2 p-1">
                     <svg
                     width="17"
@@ -36,6 +36,8 @@
                     placeholder="Search..."
                     required=""
                     type="text"
+                    name="query"
+                    value="{{ request('query') }}"
                 />
                 <button type="reset" class="absolute right-3 -translate-y-1/2 top-1/2 p-1">
                     <svg                    
@@ -68,7 +70,7 @@
         <ul class="flex flex-col items-center py-4 space-y-4">
             <li><a href="{{ route('content.index') }}" class="text-white text-lg league-spartan">Início</a></li>
             <li><a href="#" class="text-white text-lg league-spartan">Vídeos</a></li>
-            <li><a href="#" class="text-white text-lg league-spartan">Categorias</a></li>
+            <li><a href="{{ route('categories.index') }}" class="text-white text-lg league-spartan">Categorias</a></li>
             <li><a href="#" class="text-white text-lg league-spartan">Chefs</a></li>
         </ul>
     </div>

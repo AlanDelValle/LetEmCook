@@ -12,12 +12,10 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Category::query();
-        if ($request->filled('name')) {
-            $query->where('name', 'like', '%' . $request->input('name') . '%');
-        }
-        
-        $categories = $query->orderBy('name')->paginate(50)->appends($request->query());
+        $categories = Category::search($request->input('name', '')) // Usa Scout para busca
+            ->orderBy('name')
+            ->paginate(50)
+            ->appends($request->query());
 
         return view('categories', compact('categories'));
     }
@@ -29,6 +27,6 @@ class CategoryController extends Controller
         $contents = $category->contents()
             ->with(['cooks', 'tags', 'categories'])
             ->paginate(30);
-            return view('content.categories.show', compact('category', 'contents'));
+        return view('content.categories.show', compact('category', 'contents'));
     }
 }

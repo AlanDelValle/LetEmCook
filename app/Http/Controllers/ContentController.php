@@ -10,47 +10,73 @@ use Illuminate\Http\Request;
 
 class ContentController extends Controller
 {
-    public function index()
-    {    
-    $latestContents = Content::with(['cooks', 'categories', 'tags'])
-        ->orderBy('created_at', 'desc')
-        ->take(8)
-        ->get();
-    
-    $mostViewedContents = Content::with(['cooks', 'categories', 'tags'])
-        ->orderBy('view_count', 'desc')
-        ->take(8)
-        ->get();
+    public function index(Request $request)
+    {
+        $query = $request->input('query');
 
-    $categories = Category::inRandomOrder()
-        ->take(8)
-        ->get();
-    
-    $cooks = Cook::inRandomOrder()
-        ->take(8)
-        ->get();
+        if ($query) {
+            // Busca com Scout quando há um termo de busca
+            $latestContents = Content::search($query)
+                ->with(['cooks', 'categories', 'tags'])
+                ->orderBy('created_at', 'desc')
+                ->take(8)
+                ->get();
 
-    return view('index', compact('latestContents', 'mostViewedContents', 'categories', 'cooks'));
+            $mostViewedContents = Content::search($query)
+                ->with(['cooks', 'categories', 'tags'])
+                ->orderBy('view_count', 'desc')
+                ->take(8)
+                ->get();
+
+            $categories = Category::search($query)
+                ->take(8)
+                ->get();
+
+            $cooks = Cook::search($query)
+                ->take(8)
+                ->get();
+        } else {
+            // Comportamento padrão quando não há busca
+            $latestContents = Content::with(['cooks', 'categories', 'tags'])
+                ->orderBy('created_at', 'desc')
+                ->take(8)
+                ->get();
+
+            $mostViewedContents = Content::with(['cooks', 'categories', 'tags'])
+                ->orderBy('view_count', 'desc')
+                ->take(8)
+                ->get();
+
+            $categories = Category::inRandomOrder()
+                ->take(8)
+                ->get();
+
+            $cooks = Cook::inRandomOrder()
+                ->take(8)
+                ->get();
+        }
+
+        return view('index', compact('latestContents', 'mostViewedContents', 'categories', 'cooks', 'query'));
     }
 
     public function show(Content $content)
     {
         $relatedContents = collect();
-        if ($content->tags->isNotEmpty()){
-            $relatedContents = Content::whereHas('tags', function($query) use ($content){
+        if ($content->tags->isNotEmpty()) {
+            $relatedContents = Content::whereHas('tags', function ($query) use ($content) {
                 $query->whereIn('tag_id', $content->tags->pluck('id'));
             })
-            ->where('id', '!=', $content->id)
-            ->latest()
-            ->take(12)
-            ->get();
+                ->where('id', '!=', $content->id)
+                ->latest()
+                ->take(12)
+                ->get();
         }
-            
+
         $cookRelatedContents = collect();
         if ($content->cooks->isNotEmpty()) {
             $cookRelatedContents = Content::whereHas('cooks', function ($query) use ($content) {
-                    $query->whereIn('cook_id', $content->cooks->pluck('id'));
-                })
+                $query->whereIn('cook_id', $content->cooks->pluck('id'));
+            })
                 ->where('id', '!=', $content->id)
                 ->latest()
                 ->take(12)

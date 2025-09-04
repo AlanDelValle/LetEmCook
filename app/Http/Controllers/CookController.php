@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Content;
@@ -11,12 +12,10 @@ class CookController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Cook::query();
-        if ($request->filled('name')) {
-            $query->where('name', 'like', '%' . $request->input('name') . '%');
-        }
-        
-        $cooks = $query->orderBy('name')->paginate(50)->appends($request->query());        
+        $cooks = Cook::search($request->input('name', ''))
+            ->orderBy('name')
+            ->paginate(50)
+            ->appends($request->query());
 
         return view('cooks', compact('cooks'));
     }
