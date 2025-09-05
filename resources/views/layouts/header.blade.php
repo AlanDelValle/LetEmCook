@@ -8,7 +8,7 @@
             <li><a href="{{ route('content.index') }}" class="px-1 btnheader">Início</a></li>
             <li><a href="#" class="px-1 btnheader">Receitas</a></li>
             <li><a href="{{ route('categories.index') }}" class="px-1 btnheader">Categorias</a></li>
-            <li><a href="#" class="px-1 btnheader">Temas</a></li>
+            <li><a href="{{ route('tags.index') }}" class="px-1 btnheader">Temas</a></li>
             <li><a href="{{ route('cooks.index') }}" class="px-1 btnheader">Chefs</a></li>
         </ul>        
 
@@ -72,7 +72,7 @@
             <li><a href="{{ route('content.index') }}" class="px-1 btnheader">Início</a></li>
             <li><a href="#" class="px-1 btnheader">Receitas</a></li>
             <li><a href="{{ route('categories.index') }}" class="px-1 btnheader">Categorias</a></li>
-            <li><a href="#" class="px-1 btnheader">Temas</a></li>
+            <li><a href="{{ route('tags.index') }}" class="px-1 btnheader">Temas</a></li>
             <li><a href="#" class="px-1 btnheader">Chefs</a></li>
         </ul>
     </div>

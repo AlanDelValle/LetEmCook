@@ -1,6 +1,6 @@
 @extends('layouts.app2')
 
-@section('title', $cook->name)
+@section('title', $tag->name)
 
 @section('content')
         @if (session('success'))
@@ -14,7 +14,7 @@
            <div class="mb-4">
                <a href="{{ url()->previous() }}" class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-3 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">Voltar</a>
            </div>
-           <h1 class="text-xl rounded-lg p-2 card mb-4">Vídeos em {{ $cook->name }}</h1>
+           <h1 class="text-xl rounded-lg p-2 card mb-4">Vídeos em {{ $tag->name }}</h1>
         </div>  
             
         @include('partials.content-grid', ['contents' => $contents])   
