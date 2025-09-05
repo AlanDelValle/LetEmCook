@@ -5,7 +5,7 @@
                 <img 
                     src="{{ $cook->cook ?? '/images/cook2-thumbnail.jpg' }}" 
                     alt="{{ $cook->name }}" 
-                    class="w-full h-40 object-cover"
+                    class="w-full h-40 object-cover hover:brightness-75 transition"
                     onerror="this.onerror=null;this.src='/images/cook2-thumbnail.jpg';">
                         <div class="absolute bottom-0 left-0 bg-[#70FFFA]/80 text-black text-sm px-2 py-1 rounded-tr">
                             {{ Number::abbreviate($cook->contents->count()) }}

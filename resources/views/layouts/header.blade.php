@@ -2,13 +2,14 @@
     <nav class="container mx-auto px-1 py-1 flex items-center justify-between"> 
         <a href="{{ route('content.index') }}">
             <img src="{{ asset('images/logo.png') }}" alt="Logo" class="hidden-lg h-20">
-        </a> 
+        </a>        
 
         <ul class="hidden xl:flex ml-5 space-x-6 mx-auto text-black league-spartan text-lg font-light">
-             <li><a href="{{ route('content.index') }}" class="px-1 btnheader">Início</a></li>
-             <li><a href="#" class="px-1 btnheader">Receitas</a></li>
+            <li><a href="{{ route('content.index') }}" class="px-1 btnheader">Início</a></li>
+            <li><a href="#" class="px-1 btnheader">Receitas</a></li>
             <li><a href="{{ route('categories.index') }}" class="px-1 btnheader">Categorias</a></li>
-            <li><a href="#" class="px-1 btnheader">Chefs</a></li>
+            <li><a href="#" class="px-1 btnheader">Temas</a></li>
+            <li><a href="{{ route('cooks.index') }}" class="px-1 btnheader">Chefs</a></li>
         </ul>        
 
         <div class="flex items-center space-x-5 mx-2">
@@ -55,7 +56,7 @@
                 </button>
             </form>
         </div>
-        <button id="menu-toggle" class="block xl:hidden text-white hover:text-blue-500">
+        <button id="menu-toggle" class="block xl:hidden text-black hover:text-blue-500">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -67,11 +68,12 @@
     </nav>    
 
     <div id="mobile-menu" class="header hidden block xl:hidden">
-        <ul class="flex flex-col items-center py-4 space-y-4">
-            <li><a href="{{ route('content.index') }}" class="text-white text-lg league-spartan">Início</a></li>
-            <li><a href="#" class="text-white text-lg league-spartan">Vídeos</a></li>
-            <li><a href="{{ route('categories.index') }}" class="text-white text-lg league-spartan">Categorias</a></li>
-            <li><a href="#" class="text-white text-lg league-spartan">Chefs</a></li>
+        <ul class="flex flex-col items-center league-spartan py-4 space-y-4">
+            <li><a href="{{ route('content.index') }}" class="px-1 btnheader">Início</a></li>
+            <li><a href="#" class="px-1 btnheader">Receitas</a></li>
+            <li><a href="{{ route('categories.index') }}" class="px-1 btnheader">Categorias</a></li>
+            <li><a href="#" class="px-1 btnheader">Temas</a></li>
+            <li><a href="#" class="px-1 btnheader">Chefs</a></li>
         </ul>
     </div>
 </header>

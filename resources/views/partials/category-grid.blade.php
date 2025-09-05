@@ -5,7 +5,7 @@
                 <img 
                     src="{{ $category->category_thumbnail_url ?? '/images/category-thumbnail.jpg' }}" 
                     alt="{{ $category->name }}" 
-                    class="w-full h-40 object-cover"
+                    class="w-full h-40 object-cover hover:brightness-75 transition"
                     onerror="this.onerror=null;this.src='/images/category-thumbnail.jpg';">
                         <div class="absolute bottom-0 left-0 bg-[#70FFFA]/80 text-black text-sm px-2 py-1 rounded-tr">
                             {{ Number::abbreviate($category->contents->count()) }}

@@ -16,8 +16,8 @@
                 <h3 class="text-lg font-semibold text-black truncate">{{ $content->title ?? 'Untitled' }}</h3>                
                     @if (optional($content->cooks)->isNotEmpty())                        
                         @foreach ($content->cooks as $cooks)                        
-                            <a href="{{ route('cooks.show', $cooks->id) }}" class="text-sm btnheader truncate text-wrap">{{ $cooks->name }} </a>
-                                @if (!$loop->last), @endif 
+                            <a href="{{ route('cooks.show', $cooks->id) }}"
+                                class="text-sm btnheader truncate text-wrap">{{ $cooks->name }}</a>{{ !$loop->last ? ', ' : '' }}
                         @endforeach
                                 @else
                                     None

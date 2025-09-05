@@ -5,12 +5,8 @@
 
 /* <weight>: Use a value from 400 to 700
 <uniquifier>: Use a unique and descriptive class name */
-.domine-bold {
-  font-family: "Domine", serif;  
-}
-
-.bellefair-regular {
-  font-family: "Bellefair", serif;  
+.asimovian {
+  font-family: "Asimovian", sans-serif;  
 }
 
 /* <weight>: Use a value from 100 to 900
