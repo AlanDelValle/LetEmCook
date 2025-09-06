@@ -13,8 +13,9 @@ class CookFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'bio' => $this->faker->name(),
-            'cook_thumbnail_url' => 'null',
+            'cook_description' => $this->faker->paragraph(),
+            'bio' => $this->faker->word(),
+            'cook_thumbnail_url' => $this->faker->imageUrl(640, 480),
         ];
     }
 }

@@ -10,7 +10,8 @@ class ContentFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
-            'description' => $this->faker->word(),
+            'description' => $this->faker->paragraph(),
+            'difficulty' => $this->faker->randomElement(['Easy', 'Medium', 'Hard']),
             'video_duration_seconds' => $this->faker->numberBetween(50, 50000),
             'video_thumbnail_url' => $this->faker->imageUrl(640, 480),
             'video_thumbnail_previews_url' => json_encode([$this->faker->imageUrl(320, 240)]),

@@ -13,7 +13,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'category_thumbnail_url' => 'null',
+            'category_thumbnail_url' => $this->faker->imageUrl(640, 480),
         ];
     }
 }

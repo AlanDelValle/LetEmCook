@@ -13,7 +13,7 @@ class TagFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'tag_thumbnail_url' => 'null',
+            'tag_thumbnail_url' => $this->faker->imageUrl(640, 480),
         ];
     }
 }
