@@ -14,6 +14,7 @@ class Content extends Model
     protected $fillable = [
         'title',
         'description',
+        'difficulty',
         'view_count',
         'video_duration_seconds',
         'video_thumbnail_url',
@@ -50,6 +51,7 @@ class Content extends Model
         return [
             'title' => $this->title,
             'description' => $this->description,
+            'difficulty' => $this->difficulty,
         ];
     }
 

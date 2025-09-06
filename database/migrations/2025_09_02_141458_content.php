@@ -12,6 +12,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id')->autoIncrement()->index();
             $table->string('title', 255);
             $table->string('description', 1000)->nullable();
+            $table->string('difficulty', 30)->nullable();
             $table->unsignedInteger('view_count')->default(0);            
             $table->unsignedInteger('video_duration_seconds')->nullable();
             $table->string('video_thumbnail_url', 400);

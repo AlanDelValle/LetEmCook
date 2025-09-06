@@ -8,24 +8,28 @@
                     class="w-full h-40 object-cover group-hover:brightness-75 transition"
                     onerror="this.onerror=null;this.src='/images/default2-thumbnail.jpg';">
 
-                <span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                <span class="absolute top-2 left-2 bg-[#88D18A]/80 text-black text-sm px-2 py-1 rounded-md">
+                    {{ $content->difficulty ?? 'Uncategorized' }}
+                </span>
+                <span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-md">
                     {{ $content->video_duration_seconds ? gmdate("i:s", $content->video_duration_seconds) : 'N/A' }}
                 </span></a>
             </div>
             <div class="p-2 card h-30 league-spartan">
                 <h3 class="text-lg font-semibold text-black truncate">{{ $content->title ?? 'Untitled' }}</h3>                
-                    @if (optional($content->cooks)->isNotEmpty())                        
-                        @foreach ($content->cooks as $cooks)                        
-                            <a href="{{ route('cooks.show', $cooks->id) }}"
-                                class="text-sm btnheader truncate text-wrap">{{ $cooks->name }}</a>{{ !$loop->last ? ', ' : '' }}
-                        @endforeach
-                                @else
-                                    None
-                                @endif                                                            
+                    <div class="flex flex-row items-center gap-1">                                                
+                        @if ($content->cooks->isNotEmpty())                            
+                            <a href="{{ route('cooks.show', $content->cooks->first()->id) }}"
+                            class="text-sm btnheader">{{ $content->cooks->first()->name }}</a>
+                        @else
+                            None
+                        @endif 
+                    </div>
+                <a href="{{ route('categories.show', $content->categories->first()->id) }}" class="text-sm btnheader text-black">{{ $content->categories->first()->name ?? 'Uncategorized' }}</a>                                                           
                 <p class="text-sm text-black">
                     {{ Number::abbreviate($content->view_count) }} 
                     {{ $content->view_count === 1 ? 'visualização' : 'visualizações' }}
-                </p>
+                </p>              
             </div>
         </div>
     @empty

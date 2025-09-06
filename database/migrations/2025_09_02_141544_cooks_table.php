@@ -10,8 +10,9 @@ return new class extends Migration
     {
         Schema::create('cooks', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
-            $table->string('name', 100)->index();            
-            $table->string('bio', 1000)->nullable();
+            $table->string('name', 100)->index();
+            $table->string('cook_description', 1000)->nullable();           
+            $table->string('bio', 100)->nullable();
             $table->string('cook_thumbnail_url', 400);
             $table->timestamps();
             $table->softDeletes();

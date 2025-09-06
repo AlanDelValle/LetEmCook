@@ -13,6 +13,7 @@ class Cook extends Model
 
     protected $fillable = [
         'name',
+        'cook_description',
         'bio',
         'cook_thumbnail_url'
     ];
