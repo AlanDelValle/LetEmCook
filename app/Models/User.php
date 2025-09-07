@@ -6,7 +6,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Cook;
 
+// filepath: app\Models\User.php
+/**
+ * @property \Illuminate\Database\Eloquent\Relations\BelongsToMany $followingCooks
+ */
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -44,5 +49,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+     public function followingCooks()
+    {
+        return $this->belongsToMany(Cook::class, 'cook_user', 'user_id', 'cook_id')->withTimestamps();
     }
 }

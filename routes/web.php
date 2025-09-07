@@ -24,6 +24,9 @@ Route::get('/tags/{id}', [TagController::class, 'show'])->name('tags.show');
 // Cooks
 Route::get('/cooks', [CookController::class, 'index'])->name('cooks.index');
 Route::get('/cooks/{id}', [CookController::class, 'show'])->name('cooks.show');
+// Novas rotas para seguir e deixar de seguir
+Route::post('/cooks/{id}/follow', [CookController::class, 'follow'])->name('cooks.follow')->middleware('auth');
+Route::post('/cooks/{id}/unfollow', [CookController::class, 'unfollow'])->name('cooks.unfollow')->middleware('auth');
 
 // Search
 Route::get('/search', [SearchController::class, 'index'])->name('search');

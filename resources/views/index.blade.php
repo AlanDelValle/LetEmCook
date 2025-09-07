@@ -17,7 +17,7 @@
     </section>
 
     <div class="card league-spartan rounded-md text-xl font-regular p-2 mb-2 shadow-md"><h3>Um dos melhores sites de todos os tempos!</h3></div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-white shadow rounded-md p-6 card">
             <h3 class="text-lg font-semibold">Total de Vídeos</h3>
             <p class="text-3xl">{{ number_format(\App\Models\Content::count(), 0, ',', '.') }}</p>

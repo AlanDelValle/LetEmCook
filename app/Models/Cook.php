@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Scout\Searchable;
+use App\Models\User;
 
 class Cook extends Model
 {
@@ -21,6 +22,11 @@ class Cook extends Model
     public function contents()
     {
         return $this->belongsToMany(Content::class, 'content_cook');
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'cook_user', 'cook_id', 'user_id')->withTimestamps();
     }
 
     /**

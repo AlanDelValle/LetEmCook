@@ -62,9 +62,48 @@
             </svg>
         </button>
 
-        <button class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-            <a href="#">Login</a>
-        </button>
+        <div class="hidden sm:flex sm:items-center sm:ms-6">
+        @auth
+            <x-dropdown allign="right" width="48">
+                <x-slot name="trigger">
+                    <button class="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                        <div>{{ Auth::user()->name }}</div>
+
+                        <div class="ms-1">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </button>
+                </x-slot>
+            
+                <x-slot name="content">
+                    <x-dropdown-link :href="route('profile.edit')">
+                        {{ __('Profile') }}
+                    </x-dropdown-link>
+
+                    <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-dropdown-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
+                </x-slot>
+            </x-dropdown>
+        @else
+            <div class="flex space-x-4">
+                <a href="{{ route('login') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                    {{ __('Login') }}
+                </a>
+                <a href="{{ route('register') }}" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                    {{ __('Register') }}
+                </a>
+            </div>
+        @endauth
+</div>
     </nav>    
 
     <div id="mobile-menu" class="header hidden block xl:hidden">
@@ -75,6 +114,7 @@
             <li><a href="{{ route('tags.index') }}" class="px-1 btnheader">Temas</a></li>
             <li><a href="#" class="px-1 btnheader">Chefs</a></li>
         </ul>
+        
     </div>
 </header>
 
