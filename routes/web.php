@@ -31,6 +31,9 @@ Route::post('/cooks/{id}/unfollow', [CookController::class, 'unfollow'])->name('
 // Search
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 
+// Related Content
+Route::post('/content/{content}/increment-views', [ContentController::class, 'incrementViews'])->name('content.incrementViews');
+
 
 /*Route::get('/', function () {
     return view('welcome');

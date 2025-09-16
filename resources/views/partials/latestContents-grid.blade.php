@@ -8,8 +8,14 @@
                     class="w-full h-40 object-cover group-hover:brightness-75 transition"
                     onerror="this.onerror=null;this.src='/images/default2-thumbnail.jpg';">
 
-                <span class="absolute top-2 left-2 bg-[#88D18A]/80 text-black text-sm px-2 py-1 rounded-md">
-                    {{ $content->difficulty ?? 'Uncategorized' }}
+                <span class="absolute top-2 left-2">
+                    @if ($content->difficulty === 'Easy')
+                        <p class="bg-[#88D18A]/80 text-black text-sm px-2 py-1 rounded-md">{{ $content->difficulty }}</p>
+                    @elseif ($content->difficulty === 'Medium')
+                        <p class="bg-[#EDD83D]/80 text-black text-sm px-2 py-1 rounded-md">{{ $content->difficulty }}</p>
+                    @else
+                        <p class="bg-[#F8333C]/80 text-black text-sm px-2 py-1 rounded-md">{{ $content->difficulty }}</p>
+                    @endif
                 </span>
                 <span class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded-md">
                     {{ $content->video_duration_seconds ? gmdate("i:s", $content->video_duration_seconds) : 'N/A' }}

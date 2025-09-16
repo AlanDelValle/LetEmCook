@@ -22,7 +22,7 @@
                 <div class="flex-1 text-center md:text-left space-y-2">
                     <h1 class="text-xl md:text-2xl font-semibold text-gray-900 truncate">{{ $cook->name }}</h1>
                     <h2 class="text-base md:text-lg font-light text-gray-700 truncate">{{ $cook->bio }}</h2>
-                    <h2 class="text-base md:text-lg font-light text-gray-700 truncate">{{ $cook->cook_description }}</h2>
+                    <h2 class="text-base md:text-lg font-light text-gray-700 truncate text-wrap">{{ $cook->cook_description }}</h2>
                     <div class="flex justify-center md:justify-start space-x-4 text-sm text-gray-600">
                         <p>
                             <span class="font-medium">{{ Number::abbreviate($cook->followers()->count()) }}</span>
