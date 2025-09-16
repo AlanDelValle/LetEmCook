@@ -13,7 +13,7 @@
     
 </head>
 <body class="background">
-    <header>
+    <header class="mb-10">
         @include('layouts.header')
     </header>
     <main class="container-center flex flex-col items-center md:flex-col">        

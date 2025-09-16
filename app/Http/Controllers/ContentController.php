@@ -33,7 +33,7 @@ class ContentController extends Controller
                 ->get();
 
             $cooks = Cook::search($query)
-                ->take(8)
+                ->take(10)
                 ->get();
         } else {
             // Comportamento padrão quando não há busca
@@ -52,7 +52,7 @@ class ContentController extends Controller
                 ->get();
 
             $cooks = Cook::inRandomOrder()
-                ->take(8)
+                ->take(10)
                 ->get();
         }
 

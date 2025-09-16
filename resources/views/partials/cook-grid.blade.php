@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 league-spartan">    
+<div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 league-spartan">    
     @foreach ($cooks as $cook)
         <div class="block rounded-md overflow-hidden shadow-md card relative">
             <a href="{{ route('cooks.show', $cook->id) }}" class="block">

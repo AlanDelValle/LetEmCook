@@ -10,7 +10,7 @@
                         <span class="text-xs uppercase">Junte-se à nós, é de graça!</span>
                         <h3 class="text-3xl pt-1 font-bold">Descubra receitas deliciosas</h3>
                         <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p>
-                        <button type="button" class="self-start bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"><a href="#">Ver receitas</a></button>
+                        <button type="button" class="self-start bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"><a href="#">Ver receitas</a></button>
                     </div>
                 </div>
             </div>

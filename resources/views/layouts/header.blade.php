@@ -95,10 +95,10 @@
             </x-dropdown>
         @else
             <div class="flex space-x-4">
-                <a href="{{ route('login') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                <a href="{{ route('login') }}" class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-2 px-4 rounded-full transform hover:scale-105 transition duration-300 ease-in-out">
                     {{ __('Login') }}
                 </a>
-                <a href="{{ route('register') }}" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out">
+                <a href="{{ route('register') }}" class="bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold py-2 px-4 rounded-full transform hover:scale-105 transition duration-300 ease-in-out">
                     {{ __('Register') }}
                 </a>
             </div>
